@@ -16,7 +16,7 @@ app.get("/", function(req, res) {
     connection.query("SELECT * FROM burgers;", function(err, data) {
         if (err) throw err;
 
-        res.render("")
+        res.render("index");
     });
 });
 
