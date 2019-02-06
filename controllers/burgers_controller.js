@@ -1,7 +1,19 @@
 var express = require("express");
 var router = express.router();
-require("burger.js");
+var burger = require("burger.js");
 
-express();
+router.get("/", function(req, res) {
+
+})
+
+router.post("/api/burgers", function(req, res) {
+
+})
+
+router.put("/api/burgers/:id", function(req, res) {
+
+})
+
+
 module.exports = router
 
