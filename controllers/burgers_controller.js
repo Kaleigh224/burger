@@ -1,5 +1,6 @@
 var express = require("express");
-var router = require("burger.js");
+var router = express.router();
+require("burger.js");
 
 express();
 module.exports = router
