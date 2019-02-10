@@ -25,14 +25,14 @@ var orm = {
     
     },
 
-    updateOne: function(tableInput, newCol, newVal, chosenCol, chosenVal, cb) {
-        var queryString = `UPDATE ${tableInput} SET ? WHERE ?`;
-        connection.query(queryString, [{newCol:newVal}, {chosenCol:chosenVal}], function(err, result) {
+    updateOne: function(tableInput, newCol, newVal, chosenVal, cb) {
+        var queryString = "UPDATE ?? SET ?? = ? WHERE id = ?";
+        connection.query(queryString, [tableInput, newCol, newVal, chosenVal], function(err, result) {
             if (err) {
                 throw err;
             }
             cb(result);
-        })
+        });
     }
 }
 

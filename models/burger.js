@@ -1,9 +1,9 @@
-var orm = require("./config/orm.js");
+var orm = require("../config/orm.js");
 
 var burger = {
     selectAll: function(cb) {
-        orm.selectAll("burgers", function(res) {
-            cb(res);
+        orm.selectAll("burgers", function(results) {
+            cb(results);
         });
     },
 
@@ -14,7 +14,7 @@ var burger = {
     },
 
     updateOne: function(chosenVal, cb) {
-        orm.updateOne("burgers", "devoured", true, "id", chosenVal, function(res) {
+        orm.updateOne("burgers", "devoured", true, chosenVal, function(res) {
             cb(res);
         });
     }
