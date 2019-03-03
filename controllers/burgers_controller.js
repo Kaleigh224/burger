@@ -8,9 +8,11 @@ router.get("/", function (req, res) {
     })
 })
 
-// router.post("/api/burgers", function (req, res) {
-
-// })
+router.post("/api/burgers", function (req, res) {
+    burger.insertOne(req.body.burgers, function() {
+        res.redirect("/")
+    })
+})
 
 router.put("/api/burgers/:id", function (req, res) {
     burger.updateOne(req.params.id, function(result) {

@@ -13,8 +13,9 @@ var orm = {
     },
 
     insertOne: function(tableInput, colOne, colTwo, valOne, valTwo, cb) {
-        var queryString = `INSERT INTO ${tableInput} SET ?`;
-        connection.query(queryString, {colOne:valOne, colTwo:valTwo}, function(err, result) {
+        var queryString = `INSERT INTO ${tableInput} (??, ??) VALUES (?, ?)`;
+        console.log(queryString, "KH1")
+        connection.query(queryString, [colOne, colTwo, valOne, valTwo], function(err, result) {
             if (err) {
                 throw err;
             }
